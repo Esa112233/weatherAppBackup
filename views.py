@@ -6,7 +6,7 @@ from django.http import JsonResponse
 # Create your views here.
 def weather(request):
     print("hi")
-    r = requests.get("http://10.30.42.10:8080/SAFEROneDAQ/data/latestMetAverages?metStationId=1530", auth=('user', 'pass'))
+    r = requests.get("dataAPI", auth=('user', 'pass'))
     # print(r.json()[0].get("metData").get("feelsLike"))
     r = r.json()[0].get("metData")
     metStationName = r.get("maxWindSpeed")
